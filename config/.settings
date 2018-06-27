@@ -1,0 +1,17 @@
+{
+    "projectName": "InternshipTask",
+    "username": "internship-task@dzesen-lightpoint.com",
+    "id": "8c0ddb10-7a2f-11e8-b60c-bdd4114c3fcf",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://ap4.salesforce.com",
+    "workspace": "/home/dzesen/SublimeTextWorkspace/",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
