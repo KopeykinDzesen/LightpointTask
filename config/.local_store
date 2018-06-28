@@ -1,1 +1,16 @@
-{}
+{
+    "MainPage.page": {
+        "createdById": "0056F000008YoL1QAK",
+        "createdByName": "Денис Копейкин",
+        "createdDate": "2018-06-27T17:39:25.000Z",
+        "fileName": "unpackaged/pages/MainPage.page",
+        "fullName": "MainPage",
+        "id": "0666F000005kXwdQAE",
+        "lastModifiedById": "0056F000008YoL1QAK",
+        "lastModifiedByName": "Денис Копейкин",
+        "lastModifiedDate": "2018-06-27T19:47:07.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexPage",
+        "mmState": "clean"
+    }
+}

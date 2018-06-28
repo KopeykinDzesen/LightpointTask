@@ -1,0 +1,114 @@
+<apex:page showHeader="false" sidebar="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+<head>
+	
+</head>
+
+<body>
+	
+	<apex:pageMessages />
+	<apex:slds />
+
+	<!-- <apex:form>
+		<apex:actionFunction name="doSearch" action="{!doSearch}" oncomplete="showTables({!allPrices})" reRender="tables">
+			<apex:param name="CityFrom" assignTo="{!CityFrom}" value="" />
+		</apex:actionFunction>
+	</apex:form> -->
+
+	<div class="slds-scope">
+
+		<div id="authorization-form" style="margin: 15% 35% 0 25%">			
+			<div class="slds-form slds-form_horizontal">
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" for="input-login">Логин</label>
+					<div class="slds-form-element__control">
+		  				<input type="text" id="input-login" class="slds-input" placeholder="Your Login" />
+					</div>
+				</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-password">Пароль</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="password" id="input-password" class="slds-input" placeholder="Your Password" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<div class="slds-form-element__control">
+		      			<a href="javascript:registrationShow()">Зарегистрироваться</a>
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<button class="slds-button slds-button_outline-brand" onclick="">Войти</button>
+		  		</div>
+			</div>
+		</div>
+
+		<div id="registration-form" style="margin: 15% 35% 0 25%">			
+			<div class="slds-form slds-form_horizontal">
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" for="input-firstname">Имя</label>
+					<div class="slds-form-element__control">
+		  				<input type="text" id="input-firstname" class="slds-input" placeholder="Your First Name" />
+					</div>
+				</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-lastname">Фамилия</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="text" id="input-lastname" class="slds-input" placeholder="Your Last Name" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-login">Логин</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="text" id="input-login" class="slds-input" placeholder="Your Login" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-password">Пароль</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="password" id="input-password" class="slds-input" placeholder="Your Password" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-confirmpassword">Подтвердите пароль</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="password" id="input-confirmpassword" class="slds-input" placeholder="Your Password" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<div class="slds-form-element__control">
+		      			<a href="javascript:authorizationShow()">Авторизоваться</a>
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<button class="slds-button slds-button_outline-brand" onclick="">Зарегистрироваться</button>
+		  		</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript">
+
+		let authorizationForm = document.getElementById('authorization-form');
+		let registrationForm = document.getElementById('registration-form');
+		
+		function registrationShow() {
+			authorizationForm.setAttribute('hidden', 'true');
+			registrationForm.removeAttribute('hidden');
+		}
+
+		function authorizationShow() {
+			registrationForm.setAttribute('hidden', 'true');
+			authorizationForm.removeAttribute('hidden');
+		}
+
+	</script>
+
+</body>
+
+</html>
+	
+</apex:page>

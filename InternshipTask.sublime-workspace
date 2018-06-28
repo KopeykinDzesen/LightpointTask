@@ -1,1 +1,760 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"auth",
+				"authorizationShow"
+			],
+			[
+				"au",
+				"authorizationForm"
+			],
+			[
+				"re",
+				"registrationForm"
+			],
+			[
+				"reg",
+				"registration-form"
+			],
+			[
+				"autho",
+				"authorization-form"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"addon",
+				"addonsBook"
+			],
+			[
+				"fligh",
+				"flightBook"
+			],
+			[
+				"Fl",
+				"Flight__c"
+			],
+			[
+				"res",
+				"resultPricesFlightsList"
+			],
+			[
+				"de",
+				"PUBLIC deserialize(String jsonString, system.Type apexType) \tObject"
+			],
+			[
+				"get",
+				"getAllPrices"
+			],
+			[
+				"Da",
+				"DateTo"
+			],
+			[
+				"pri",
+				"price"
+			],
+			[
+				"Ty",
+				"Type__c"
+			],
+			[
+				"Ti",
+				"TimeOfFlight__c"
+			],
+			[
+				"Tot",
+				"TotalNumberOfSeats__c"
+			],
+			[
+				"Re",
+				"RemainingNumberOfSeats__c"
+			],
+			[
+				"Flight",
+				"FlightCompany__c"
+			],
+			[
+				"add",
+				"addons"
+			],
+			[
+				"City",
+				"CityTo"
+			],
+			[
+				"que",
+				"querySelectAddons"
+			],
+			[
+				"msg",
+				"msgDetail"
+			],
+			[
+				"ass",
+				"assertEquals()"
+			],
+			[
+				"Date",
+				"DateFrom"
+			],
+			[
+				"Dat",
+				"Database.insert"
+			],
+			[
+				"tes",
+				"testFlight"
+			],
+			[
+				"fli",
+				"flightCompany"
+			],
+			[
+				"st",
+				"PUBLIC startTest() \tvoid"
+			],
+			[
+				"ge",
+				"getMessage"
+			],
+			[
+				"System",
+				"System.assertEquals('The"
+			],
+			[
+				"flig",
+				"flightsList"
+			],
+			[
+				"resu",
+				"results"
+			],
+			[
+				"Tes",
+				"Test.stopTest"
+			],
+			[
+				"Bo",
+				"BookedFlight__c"
+			],
+			[
+				"Boo",
+				"BookedFlight__c\t(BookingFlightTrigger.trigger)"
+			],
+			[
+				"Fligth",
+				"Flight__c"
+			],
+			[
+				"Sea",
+				"SeatAmount__c"
+			],
+			[
+				"Fligh",
+				"Flight__c"
+			],
+			[
+				"pr",
+				"pricesFlightsList"
+			],
+			[
+				"out",
+				"apex:outputText"
+			],
+			[
+				"new",
+				"newBookedFlight\t(SearchFlightController.cls)"
+			],
+			[
+				"bf",
+				"bfAndAddonList"
+			],
+			[
+				"B",
+				"Booked_Flights__r"
+			],
+			[
+				"a",
+				"addons"
+			],
+			[
+				"all",
+				"allPricesBook"
+			],
+			[
+				"Price",
+				"Price__c"
+			],
+			[
+				"fl",
+				"flightBook"
+			],
+			[
+				"Fli",
+				"Flight__c"
+			],
+			[
+				"to",
+				"totalPrice"
+			],
+			[
+				"Ad",
+				"Addon__c"
+			],
+			[
+				"De",
+				"Decimal\t[Standard Apex Class]"
+			],
+			[
+				"ad",
+				"addonsNumbers"
+			],
+			[
+				"te",
+				"testStr"
+			],
+			[
+				"si",
+				"PUBLIC size() \tInteger"
+			],
+			[
+				"V",
+				"Value__c"
+			],
+			[
+				"Pr",
+				"pricesFlightsList"
+			],
+			[
+				"addo",
+				"addonCheckboxes"
+			],
+			[
+				"apex",
+				"apex:page"
+			],
+			[
+				"bo",
+				"bookedFlight"
+			],
+			[
+				"ta",
+				"tables"
+			],
+			[
+				"di",
+				"disabled"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"Add",
+				"Addon__r.Name\t(SearchFlightController.cls)"
+			],
+			[
+				"in",
+				"insertStr"
+			],
+			[
+				"Tim",
+				"TimeOfFlight__c\t(SearchAndBookingFlight.page)"
+			],
+			[
+				"P",
+				"Price__c\t(SearchFlightController.cls)"
+			],
+			[
+				"F",
+				"Flights"
+			],
+			[
+				"tabl",
+				"tableAddons"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"A",
+				"Addons"
+			],
+			[
+				"al",
+				"allPricesList"
+			],
+			[
+				"Ci",
+				"CityFrom"
+			],
+			[
+				"pricesAdd",
+				"pricesAddonsList"
+			],
+			[
+				"pricesFli",
+				"pricesFlightsList"
+			],
+			[
+				"Pl",
+				"Pillow"
+			],
+			[
+				"pricesAddon",
+				"pricesAddonPillows"
+			],
+			[
+				"price",
+				"pricesAddons"
+			],
+			[
+				"priceAE",
+				"pricesAEat"
+			],
+			[
+				"pricesAd",
+				"pricesAddonEating\t(SearchFlightController.cls)"
+			],
+			[
+				"pric",
+				"pricesAPillow"
+			],
+			[
+				"Addon__r",
+				"Addon__r.RecordType.Name"
+			],
+			[
+				"qu",
+				"querySelectAddons"
+			],
+			[
+				"Pla",
+				"Plaids"
+			],
+			[
+				"Addo",
+				"Addon__c"
+			],
+			[
+				"onc",
+				"onchange\t(String)"
+			],
+			[
+				"fo",
+				"foodTable"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"on",
+				"oncomplete\t(String)"
+			],
+			[
+				"Pri",
+				"Price__c"
+			],
+			[
+				"p",
+				"pricesFlights"
+			],
+			[
+				"Pa",
+				"PageReference\t[Standard Apex Class]"
+			],
+			[
+				"DD",
+				"DDateTo"
+			],
+			[
+				"JS",
+				"JSON\t[Standard Apex Class]"
+			],
+			[
+				"pad",
+				"padding-bottom\tproperty"
+			],
+			[
+				"pa",
+				"padding-left\tproperty"
+			],
+			[
+				"C",
+				"CityTo"
+			],
+			[
+				"str",
+				"stroka"
+			],
+			[
+				"Pi",
+				"Plaids\t(SearchAndBookingFlight.page)"
+			],
+			[
+				"Cy",
+				"CityFrom"
+			],
+			[
+				"D",
+				"DateTo"
+			],
+			[
+				"pag",
+				"apex:pageMessages"
+			],
+			[
+				"me",
+				"apex:pageMessages"
+			],
+			[
+				"search",
+				"searchButton"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"ch",
+				"checkFilling"
+			],
+			[
+				"Se",
+				"SearchAndBookingFlight.page"
+			],
+			[
+				"cont",
+				"controller\t(String)"
+			],
+			[
+				"T",
+				"today()"
+			],
+			[
+				"se",
+				"searchPrice"
+			],
+			[
+				"searh",
+				"searchPrice"
+			],
+			[
+				"acti",
+				"apex:actionSupport"
+			],
+			[
+				"va",
+				"var\t(String)"
+			],
+			[
+				"pageBl",
+				"apex:pageBlockTable"
+			],
+			[
+				"f",
+				"flightId"
+			],
+			[
+				"d",
+				"dateTo"
+			],
+			[
+				"da",
+				"dateFrom"
+			],
+			[
+				"date",
+				"dateTo"
+			],
+			[
+				"page",
+				"apex:pageBlockSectionItem"
+			],
+			[
+				"pageB",
+				"apex:pageBlockSection"
+			],
+			[
+				"com",
+				"apex:commandButton"
+			],
+			[
+				"ac",
+				"action\t(ApexPages.Action)"
+			],
+			[
+				"inc",
+				"apex:includeScript"
+			],
+			[
+				"__",
+				"__name__"
+			],
+			[
+				"co",
+				"color\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"i",
+				"i_love_python"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/pages/MainPage.page",
+			"settings":
+			{
+				"buffer_size": 4021,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"repl",
+				"Set Syntax: Io Repl"
+			],
+			[
+				"git",
+				"Git: Commit history"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 233.846160889,
+		"history":
+		[
+			"python3 example.py",
+			"python example.py",
+			"python example"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/pages"
+	],
+	"file_history":
+	[
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/classes/TestBookingFlightTrigger.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/triggers/BookingFlightTrigger.trigger",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/pages/SearchAndBookingFlight.page",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/classes/SearchFlightController.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/pages/BookingFlight.page",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/classes/TestClass.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/pages/HelloJQuery.page",
+		"/home/dzesen/.ключики",
+		"/home/dzesen/.config/sublime-text-3/Packages/User/mavensmate.sublime-settings",
+		"/home/dzesen/Alina/Python/example.py",
+		"/home/dzesen/Alina/CSS/example_css.css",
+		"/home/dzesen/.config/sublime-text-3/Packages/User/colorcoder.sublime-settings",
+		"/home/dzesen/Alina/HTML/example_html.html",
+		"/home/dzesen/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 32.8
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Password",
+			"paswsord",
+			"password"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/pages/MainPage.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3254,
+								3254
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1199.2,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.8
+	},
+	"input":
+	{
+		"height": 66.3076934814
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 160.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "InternshipTask.sublime-project",
+	"replace":
+	{
+		"height": 60.8
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
