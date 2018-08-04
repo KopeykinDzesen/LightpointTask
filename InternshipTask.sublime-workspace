@@ -1,1 +1,946 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"su",
+				"PUBLIC substring(Integer start, Integer end) \tString"
+			],
+			[
+				"co",
+				"PUBLIC contains(String str) \tBoolean"
+			],
+			[
+				"em",
+				"employeesFieldsName"
+			],
+			[
+				"empl",
+				"emple"
+			],
+			[
+				"all",
+				"allEmployees"
+			],
+			[
+				"emplo",
+				"employeesFieldsName"
+			],
+			[
+				"Cli",
+				"clientLogin"
+			],
+			[
+				"in",
+				"initClient"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"Ca",
+				"CandidatesPageForManager\t[Visualforce Page]"
+			],
+			[
+				"E",
+				"EmployeesPageForManager\t[Visualforce Page]"
+			],
+			[
+				"C",
+				"ClientsPageForManager\t[Visualforce Page]"
+			],
+			[
+				"Em",
+				"Employee__c"
+			],
+			[
+				"Role",
+				"Role__c"
+			],
+			[
+				"EM",
+				"Employee__c"
+			],
+			[
+				"Ro",
+				"Role__c"
+			],
+			[
+				"arr",
+				"arrayCheckBoxRole"
+			],
+			[
+				"cl",
+				"class"
+			],
+			[
+				"In",
+				"Integer\t[Standard Apex Class]"
+			],
+			[
+				"ar",
+				"arrayCheckBoxRoleJSON"
+			],
+			[
+				"ro",
+				"roleCheckBox"
+			],
+			[
+				"mana",
+				"managerCheckBox"
+			],
+			[
+				"show",
+				"showClientsByRole"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"cli",
+				"clientsShow"
+			],
+			[
+				"clients",
+				"clientsShowJS\t(ClientsPageForManager.page)"
+			],
+			[
+				"Login",
+				"LoginPage"
+			],
+			[
+				"Logi",
+				"LoginPage\t[Visualforce Page]"
+			],
+			[
+				"Da",
+				"DateOfRegistration__c\t(LoginPageController.cls)"
+			],
+			[
+				"col",
+				"apex:column"
+			],
+			[
+				"out",
+				"apex:outputField"
+			],
+			[
+				"hea",
+				"headerValue"
+			],
+			[
+				"c",
+				"apex:column"
+			],
+			[
+				"va",
+				"var\t(String)"
+			],
+			[
+				"getFi",
+				"PUBLIC getFieldPath() \tString"
+			],
+			[
+				"get",
+				"getFields"
+			],
+			[
+				"F",
+				"FieldSets"
+			],
+			[
+				"pr",
+				"private\t(SearchFlightController.cls)"
+			],
+			[
+				"Page",
+				"PageReference"
+			],
+			[
+				"exi",
+				"exitToLoginPage"
+			],
+			[
+				"Las",
+				"LastName\t(MainPage.page)"
+			],
+			[
+				"Lo",
+				"Login\t(MainPage.page)"
+			],
+			[
+				"clt",
+				"cltEmpId"
+			],
+			[
+				"clientL",
+				"clientLogin"
+			],
+			[
+				"clientLa",
+				"clientLastName"
+			],
+			[
+				"La",
+				"LastName__c\t(LoginPageController.cls)"
+			],
+			[
+				"Fi",
+				"FirstName__c\t(LoginPageController.cls)"
+			],
+			[
+				"user",
+				"userProfile"
+			],
+			[
+				"fo",
+				"footer\tTag"
+			],
+			[
+				"Home",
+				"HomePageController\t(LoginPageController.cls)"
+			],
+			[
+				"Hom",
+				"HomePageController"
+			],
+			[
+				"H",
+				"HomePage\t(HomePage.page)"
+			],
+			[
+				"clo",
+				"closeMessageError"
+			],
+			[
+				"Pas",
+				"Password"
+			],
+			[
+				"new",
+				"newClient"
+			],
+			[
+				"Fir",
+				"FirstName__c"
+			],
+			[
+				"Message",
+				"MessageError"
+			],
+			[
+				"mes",
+				"messageSuccess"
+			],
+			[
+				"shoe",
+				"showMessageSuccess"
+			],
+			[
+				"Mes",
+				"Messages"
+			],
+			[
+				"Res",
+				"ResultJSON"
+			],
+			[
+				"Re",
+				"ResultJSON"
+			],
+			[
+				"onc",
+				"onclick\tAttr"
+			],
+			[
+				"Ma",
+				"Message"
+			],
+			[
+				"input-l",
+				"input-lastname-r"
+			],
+			[
+				"inpu",
+				"input-firstname-r"
+			],
+			[
+				"auth",
+				"authorizationShow"
+			],
+			[
+				"au",
+				"authorizationForm"
+			],
+			[
+				"re",
+				"registrationForm"
+			],
+			[
+				"reg",
+				"registration-form"
+			],
+			[
+				"autho",
+				"authorization-form"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"addon",
+				"addonsBook"
+			],
+			[
+				"fligh",
+				"flightBook"
+			],
+			[
+				"Fl",
+				"Flight__c"
+			],
+			[
+				"res",
+				"resultPricesFlightsList"
+			],
+			[
+				"de",
+				"PUBLIC deserialize(String jsonString, system.Type apexType) \tObject"
+			],
+			[
+				"pri",
+				"price"
+			],
+			[
+				"Ty",
+				"Type__c"
+			],
+			[
+				"Ti",
+				"TimeOfFlight__c"
+			],
+			[
+				"Tot",
+				"TotalNumberOfSeats__c"
+			],
+			[
+				"Flight",
+				"FlightCompany__c"
+			],
+			[
+				"add",
+				"addons"
+			],
+			[
+				"City",
+				"CityTo"
+			],
+			[
+				"que",
+				"querySelectAddons"
+			],
+			[
+				"msg",
+				"msgDetail"
+			],
+			[
+				"ass",
+				"assertEquals()"
+			],
+			[
+				"Date",
+				"DateFrom"
+			],
+			[
+				"Dat",
+				"Database.insert"
+			],
+			[
+				"tes",
+				"testFlight"
+			],
+			[
+				"fli",
+				"flightCompany"
+			],
+			[
+				"st",
+				"PUBLIC startTest() \tvoid"
+			],
+			[
+				"ge",
+				"getMessage"
+			],
+			[
+				"System",
+				"System.assertEquals('The"
+			],
+			[
+				"flig",
+				"flightsList"
+			],
+			[
+				"resu",
+				"results"
+			],
+			[
+				"Tes",
+				"Test.stopTest"
+			],
+			[
+				"Bo",
+				"BookedFlight__c"
+			],
+			[
+				"Boo",
+				"BookedFlight__c\t(BookingFlightTrigger.trigger)"
+			],
+			[
+				"Fligth",
+				"Flight__c"
+			],
+			[
+				"Sea",
+				"SeatAmount__c"
+			],
+			[
+				"Fligh",
+				"Flight__c"
+			],
+			[
+				"bf",
+				"bfAndAddonList"
+			],
+			[
+				"B",
+				"Booked_Flights__r"
+			],
+			[
+				"a",
+				"addons"
+			],
+			[
+				"Price",
+				"Price__c"
+			],
+			[
+				"fl",
+				"flightBook"
+			],
+			[
+				"Fli",
+				"Flight__c"
+			],
+			[
+				"to",
+				"totalPrice"
+			],
+			[
+				"Ad",
+				"Addon__c"
+			],
+			[
+				"De",
+				"Decimal\t[Standard Apex Class]"
+			],
+			[
+				"ad",
+				"addonsNumbers"
+			],
+			[
+				"te",
+				"testStr"
+			],
+			[
+				"si",
+				"PUBLIC size() \tInteger"
+			],
+			[
+				"V",
+				"Value__c"
+			],
+			[
+				"Pr",
+				"pricesFlightsList"
+			],
+			[
+				"addo",
+				"addonCheckboxes"
+			],
+			[
+				"apex",
+				"apex:page"
+			],
+			[
+				"bo",
+				"bookedFlight"
+			],
+			[
+				"ta",
+				"tables"
+			],
+			[
+				"di",
+				"disabled"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"Add",
+				"Addon__r.Name\t(SearchFlightController.cls)"
+			],
+			[
+				"Tim",
+				"TimeOfFlight__c\t(SearchAndBookingFlight.page)"
+			],
+			[
+				"P",
+				"Price__c\t(SearchFlightController.cls)"
+			],
+			[
+				"tabl",
+				"tableAddons"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"A",
+				"Addons"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/pages/ClientsPageForManager.page",
+			"settings":
+			{
+				"buffer_size": 6959,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/LoginPageController.cls",
+			"settings":
+			{
+				"buffer_size": 3221,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/ClientsPageController.cls",
+			"settings":
+			{
+				"buffer_size": 3757,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/EmployeesPageForManager.page",
+			"settings":
+			{
+				"buffer_size": 7031,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/EmployeesPageController.cls",
+			"settings":
+			{
+				"buffer_size": 3891,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"repl",
+				"Set Syntax: Io Repl"
+			],
+			[
+				"git",
+				"Git: Commit history"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 233.846160889,
+		"history":
+		[
+			"python3 example.py",
+			"python example.py",
+			"python example"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/classes",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/pages"
+	],
+	"file_history":
+	[
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/classes/HomePageController.cls",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/classes/ClientsPageController.cls-meta.xml",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/classes/SearchFlightController.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/pages/SearchAndBookingFlight.page",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/pages/HomePage.page",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/classes/ClientsPageController.cls",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/pages/ClientsPageForManager.page",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/pages/MainPage.page",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/pages/LoginPage.page",
+		"/home/dzesen/SublimeTextWorkspace/InternshipTask/src/classes/LoginPageController.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/classes/TestBookingFlightTrigger.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/triggers/BookingFlightTrigger.trigger",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/pages/BookingFlight.page",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/classes/TestClass.cls",
+		"/home/dzesen/SublimeTextWorkspace/PlaygroundLightpoint/src/pages/HelloJQuery.page",
+		"/home/dzesen/.ключики",
+		"/home/dzesen/.config/sublime-text-3/Packages/User/mavensmate.sublime-settings",
+		"/home/dzesen/Alina/Python/example.py",
+		"/home/dzesen/Alina/CSS/example_css.css",
+		"/home/dzesen/.config/sublime-text-3/Packages/User/colorcoder.sublime-settings",
+		"/home/dzesen/Alina/HTML/example_html.html",
+		"/home/dzesen/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 31.2
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Client__c",
+			"clt",
+			"clientsWithFilter",
+			"Employee__r",
+			"clt",
+			"allClients",
+			"void",
+			"newAllClients",
+			"clientsWithFilter",
+			"allClients",
+			"managerCheckBox",
+			"manager",
+			"Mon",
+			"monday",
+			"Employee__c",
+			"employee",
+			"Employee__c",
+			"employee",
+			"Login",
+			"newocp",
+			"Message",
+			"FirstName",
+			"Password",
+			"paswsord",
+			"password"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/pages/ClientsPageForManager.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6781,
+								6781
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3100.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/classes/LoginPageController.cls",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3221,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3034,
+								3034
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1560.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/classes/ClientsPageController.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								812,
+								812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/pages/EmployeesPageForManager.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7031,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3101,
+								3101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/classes/EmployeesPageController.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3321,
+								3321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1680.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.2
+	},
+	"input":
+	{
+		"height": 66.3076934814
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 247.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "InternshipTask.sublime-project",
+	"replace":
+	{
+		"height": 57.6
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 385.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
