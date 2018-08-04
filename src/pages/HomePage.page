@@ -1,0 +1,136 @@
+<apex:page showHeader="true" sidebar="false" controller="HomePageController">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+<head>
+	
+</head>
+
+<body>
+	
+	<apex:slds />
+
+	<apex:form >
+		<apex:actionFunction name="clientsShow" action="{!clientsShow}" oncomplete="" reRender="main-block">
+			<!-- <apex:param name="FirstName" assignTo="{!FirstName}" value="" /> -->
+		</apex:actionFunction>
+		<apex:actionFunction name="candidatesShow" action="{!candidatesShow}" oncomplete="" reRender="main-block">
+			<!-- <apex:param name="FirstName" assignTo="{!FirstName}" value="" /> -->
+		</apex:actionFunction>
+		<apex:actionFunction name="employeesShow" action="{!employeesShow}" oncomplete="" reRender="main-block">
+			<!-- <apex:param name="FirstName" assignTo="{!FirstName}" value="" /> -->
+		</apex:actionFunction>
+		<apex:actionFunction name="exitToLoginPage" action="{!exitToLoginPage}" oncomplete="" reRender="" />
+	</apex:form>
+
+	<div class="slds-scope">
+
+		<div id="menu-form">			
+			<div class="slds-form slds-form_stacked">
+		  		<div class="slds-form-element" style="margin: 10px 0 0 10px">
+		    		<button class="slds-button slds-button_brand" onclick="candidatesShowJS()">Кандидаты</button>
+		    		<button class="slds-button slds-button_brand" onclick="employeesShowJS()">Сотрудники</button>
+		    		<button class="slds-button slds-button_brand" onclick="clientsShowJS()">Пользователи</button>
+		    		<button class="slds-button slds-float_right" onclick="clientProfileShow()" style="position:absolute;top:-20px;right:10px;">
+						<apex:image value="{!$Resource.imgUser}" width="80px" height="80px" />
+    				</button>
+		  		</div>
+			</div>
+		</div>
+
+		<apex:form id="main-block">
+
+			<apex:outputText value="{!test}" />
+
+			<apex:pageBlock title="Пользователи" id="main-block">
+					<apex:pageBlockTable value="{!allClients}" var="clt">
+						<apex:repeat value="{!clientsFieldsName}" var="fld">
+							<apex:column headerValue="{!fld.Label}">
+								<apex:outputField value="{!clt[fld]}" />
+							</apex:column>
+						</apex:repeat>
+					</apex:pageBlockTable>
+			</apex:pageBlock>
+
+		</apex:form>
+
+		<div id="userProfile" hidden="true">
+			<div class="slds-modal__container" style="height: 450px;width:150px;position:absolute;top:50px;right: 10px;">
+  				<header class="slds-modal__header" style="height:70px">
+    				<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Your profile</h2>
+  				</header>
+  				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+  					<div class="slds-grid slds-gutters">
+						<div class="slds-col">
+							<label class="slds-float_right">Логин:</label><br />
+							<label class="slds-float_right">Имя:</label><br />
+							<label class="slds-float_right">Фамилия:</label><br />
+							<label class="slds-float_right">Роль:</label><br />
+							<label class="slds-float_right">Email:</label><br />
+						</div>
+						<div class="slds-col">
+							<label class="slds-float_left" id="client-login"></label><br />
+							<label class="slds-float_left" id="client-firstname"></label><br />
+							<label class="slds-float_left" id="client-lastname"></label><br />
+							<label class="slds-float_left" id="client-role"></label><br />
+							<label class="slds-float_left" id="client-email"></label><br />
+						</div>
+  					</div>
+  				</div>
+  				<footer class="slds-modal__footer">
+  					<button class="slds-button slds-button_outline-brand" onclick="exitButton()">Выйти</button>
+  				</footer>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript">
+
+		let clientLoginLabel = document.getElementById('client-login');
+		let clientFirstNameLabel = document.getElementById('client-firstname');
+		let clientLastNameLabel = document.getElementById('client-lastname');
+		let clientRoleLabel = document.getElementById('client-role');
+		let clientEmailLabel = document.getElementById('client-email');
+
+		let clientLogin = '{!clientLogin}';
+		let client = '{!client}';
+        console.log("asdasd: " + clientLogin);
+        console.log("asdasd: " + client);
+
+        client = JSON.parse(client);
+
+        clientLoginLabel.innerHTML = client.Login;
+        clientFirstNameLabel.innerHTML = client.FirstName;
+        clientLastNameLabel.innerHTML = client.LastName;
+        clientRoleLabel.innerHTML = client.Role;
+        clientEmailLabel.innerHTML = client.Email;
+
+		let userProfile = document.getElementById('userProfile');
+
+		function clientProfileShow() {
+			if (userProfile.getAttribute('hidden')) {
+				userProfile.removeAttribute('hidden');
+			} else {
+				userProfile.setAttribute('hidden', 'true');
+			}
+			
+		};
+
+		function exitButton() {
+			exitToLoginPage();
+		};
+
+		function clientsShowJS() {
+			clientsShow();
+		};
+
+	</script>
+
+</body>
+
+</html>
+	
+</apex:page>

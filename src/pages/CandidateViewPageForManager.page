@@ -1,0 +1,408 @@
+<apex:page showHeader="true" sidebar="false" controller="CandidateViewPageController">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+<head>
+	
+</head>
+
+<body>
+	
+	<apex:slds />
+
+	<apex:form >
+		<apex:actionFunction name="candidatesShow" action="{!candidatesShow}" oncomplete="" reRender="" />
+		<apex:actionFunction name="clientsShow" action="{!clientsShow}" oncomplete="" reRender="" />
+		<apex:actionFunction name="employeesShow" action="{!employeesShow}" oncomplete="" reRender="" />
+		<apex:actionFunction name="exitToLoginPage" action="{!exitToLoginPage}" oncomplete="" reRender="" />
+		<apex:actionFunction name="submitComment" action="{!submitComment}" oncomplete="showComments()" reRender="editCandidate-form4" />
+	</apex:form>
+	
+	<div class="slds-scope">
+
+		<div id="menu-form">			
+			<div class="slds-form slds-form_stacked">
+		  		<div class="slds-form-element" style="margin: 10px 0 0 10px">
+		  			<button class="slds-button slds-button_brand" onclick="candidatesShowJS()">Кандидаты</button>
+		    		<button class="slds-button slds-button_brand" onclick="clientsShowJS()">Пользователи</button>
+		    		<button class="slds-button slds-button_brand" onclick="employeesShowJS()">Сотрудники</button>
+		    		<button class="slds-button slds-float_right" onclick="clientProfileShow()" style="position:absolute;top:-20px;right:10px;">
+						<apex:image value="{!$Resource.imgUser}" width="60px" height="60px" />
+    				</button>
+		  		</div>
+			</div>
+		</div>
+
+		<apex:form id="main-block">
+
+			<!-- <apex:outputText value="{!test}" /> -->
+
+			<div id="messageErrorView" hidden="true">
+	  			<div class="slds-notify_container slds-is-relative">
+	    			<div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+	      				<span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top">
+	        				<svg class="slds-icon slds-icon_small" aria-hidden="true">
+	          					<use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#error')}" />
+	        				</svg>
+	      				</span>
+	      				<div class="slds-notify__content">
+	        				<h2 class="slds-text-heading_small" id="text-messageError"></h2>
+	      				</div>
+	      				<button type="button" class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" onclick="closeMessageError()">
+	        				<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+	          					<use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+	        				</svg>
+	      				</button>
+	    			</div>
+	  			</div>
+			</div>
+
+			<div class="slds-grid slds-wrap" style="padding: 30px;">
+
+				<div class="slds-col slds-size_5-of-12" style="border: 3px inset #3f70d2; padding: 0 20px 20px 20px;
+															  border-radius: 10px; margin: 10px;">
+
+					<h1 style="font-size: large;">Просмотр кандидата</h1>
+
+					<div id="editCandidate-form1">			
+						<div class="slds-form slds-form_horizontal">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="input-firstname">Имя</label>
+								<div class="slds-form-element__control">
+					  				<input type="text" id="input-firstname" class="slds-input" />
+								</div>
+							</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-lastname">Фамилия</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-lastname" class="slds-input" />
+					    		</div>
+					  		</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-phone">Телефон</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-phone" class="slds-input" />
+					    		</div>
+					  		</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-email">Email</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-email" class="slds-input" />
+					    		</div>
+					  		</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-skype">Skype</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-skype" class="slds-input" />
+					    		</div>
+					  		</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="slds-col slds-size_5-of-12">
+				</div>
+
+				<div class="slds-col slds-size_10-of-12" style="border: 3px inset #3f70d2; padding: 0 20px 20px 20px;
+															  border-radius: 10px; margin: 10px;">
+
+					<h1 style="font-size: large; margin-left: 20px;">Общение с кандидатом</h1>
+
+				</div>
+
+				<div class="slds-col slds-size_5-of-12" style="border: 3px inset #3f70d2; padding: 0 20px 20px 20px;
+															  border-radius: 10px; margin: 10px;">
+
+					<h1 style="font-size: large; margin-left: 20px;">Взаимодействие</h1>
+
+					<div id="editCandidate-form2">			
+						<div class="slds-form slds-form_horizontal">
+							<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-source">Статус</label>
+								<div class="slds-form-element__control">
+									<div class="slds-select_container">
+										<select class="slds-select" id="candidateStatusSelect">
+											<option value="Start">Старт</option>
+											<option value="Anketa">Анкета</option>
+											<option value="Test">Тест</option>
+											<option value="Interview">Интервью</option>
+											<option value="DecisionMaking">Принятие решения</option>
+											<option value="Decided">Решение принято</option>
+										</select>
+									</div>
+								</div>
+					  		</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-source">Источник</label>
+								<div class="slds-form-element__control" style="margin-bottom: 10px;">
+									<div class="slds-select_container">
+										<select class="slds-select" id="candidateSourceCandidateSelect">
+											<option value="Invite">Invite</option>
+											<option value="Respond">Respond</option>
+										</select>
+									</div>
+								</div>
+								<div class="slds-form-element__control">
+									<div class="slds-select_container">
+										<select class="slds-select" id="candidateSourceCommunicationSelect">
+											<option value="Phone">Phone</option>
+											<option value="Skype">Skype</option>
+											<option value="LinkedIn">LinkedIn</option>
+											<option value="Site">Site</option>
+										</select>
+									</div>
+								</div>
+					  		</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="textareaQuestionnaireId">Анкета</label>
+								<div class="slds-form-element__control">
+									<textarea id="textareaQuestionnaireId" class="slds-textarea" placeholder=""></textarea>
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="candidateInterviewDateTimeInputId">Дата и время интервью</label>
+								<div class="slds-form-element__control">
+									<input type="text" disabled="true" id="candidateInterviewDateTimeInputId" class="slds-input" />
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="candidateInterviewDateInputId">Новая дата интервью</label>
+								<div class="slds-form-element__control">
+									<input type="date" id="candidateInterviewDateInputId" class="slds-input" />
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="candidateInterviewTimeInputId">Новое время интервью</label>
+								<div class="slds-form-element__control">
+									<input type="time" id="candidateInterviewTimeInputId" class="slds-input" />
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="candidateAnswerPeriodStrInputId">Срок принятия решения</label>
+								<div class="slds-form-element__control">
+									<input type="text" disabled="true" id="candidateAnswerPeriodStrInputId" class="slds-input" />
+								</div>
+							</div>
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="candidateAnswerPeriodInputId">Новый срок принятия решения</label>
+								<div class="slds-form-element__control">
+									<input type="date" id="candidateAnswerPeriodInputId" class="slds-input" />
+								</div>
+							</div>
+							<div class="slds-form-element">
+					    		<label class="slds-form-element__label">Решение</label>
+								<div class="slds-form-element__control">
+									<div class="slds-select_container">
+										<select class="slds-select" id="candidateAnswerSelectId">
+											<option value="">---</option>
+											<option value="Offer">Оффер</option>
+											<option value="Closed">Закрыт</option>
+											<option value="Later">Позже</option>
+										</select>
+									</div>
+								</div>
+					  		</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="slds-col slds-size_5-of-12" style="border: 3px inset #3f70d2; padding: 0 20px 20px 20px;
+															  border-radius: 10px; margin: 10px;">
+
+					<h1 style="font-size: large; margin-left: 20px;">Кандидат</h1>
+
+					<div id="editCandidate-form3">			
+						<div class="slds-form slds-form_horizontal">
+							<div class="slds-form-element">
+								<label class="slds-form-element__label" for="input-position">Позиция</label>
+								<div class="slds-form-element__control">
+					  				<input type="text" id="input-position" class="slds-input" />
+								</div>
+							</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-salary">ЗП</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-salary" class="slds-input" />
+					    		</div>
+					  		</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-experience">Опыт</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-experience" class="slds-input" />
+					    		</div>
+					  		</div>
+					  		<div class="slds-form-element">
+					    		<label class="slds-form-element__label" for="input-hr">HR</label>
+					    		<div class="slds-form-element__control">
+					      			<input type="text" id="input-hr" class="slds-input" />
+					    		</div>
+					  		</div>
+					  		<div class="slds-form-element">
+								<label class="slds-form-element__label" for="textareaDescriptionId">Описание</label>
+								<div class="slds-form-element__control">
+									<textarea id="textareaDescriptionId" class="slds-textarea" placeholder=""></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="slds-col slds-size_5-of-12" style="border: 3px inset #3f70d2; padding: 0 20px 20px 20px;
+															  border-radius: 10px; margin: 10px;">
+
+					<h1 style="font-size: large; margin-left: 20px;">Комментарии</h1>
+
+					<div id="editCandidate-form4">			
+						<div class="slds-form slds-form_horizontal">
+					  		<div class="slds-form-element">
+								<div class="slds-form-element__control">
+									<textarea id="textareaComentId" class="slds-textarea" placeholder=""></textarea>
+								</div>
+							</div>
+							<div class="slds-form-element">
+					    		<input type="button" class="slds-button slds-button_outline-brand" onclick="submitCommentJS()" value="Отправить" />
+					  		</div>
+						</div>
+					</div>
+						
+				</div>
+
+			</div>
+			
+
+		</apex:form>
+
+		<div id="userProfile" hidden="true">
+			<div class="slds-modal__container" style="height: 450px;width:150px;position:absolute;top:50px;right: 10px;">
+  				<header class="slds-modal__header" style="height:70px">
+    				<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Your profile</h2>
+  				</header>
+  				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+  					<div class="slds-grid slds-gutters">
+						<div class="slds-col">
+							<label class="slds-float_right">Логин:</label><br />
+							<label class="slds-float_right">Имя:</label><br />
+							<label class="slds-float_right">Фамилия:</label><br />
+							<label class="slds-float_right">Роль:</label><br />
+							<label class="slds-float_right">Email:</label><br />
+						</div>
+						<div class="slds-col">
+							<label class="slds-float_left" id="client-login"></label><br />
+							<label class="slds-float_left" id="client-firstname"></label><br />
+							<label class="slds-float_left" id="client-lastname"></label><br />
+							<label class="slds-float_left" id="client-role"></label><br />
+							<label class="slds-float_left" id="client-email"></label><br />
+						</div>
+  					</div>
+  				</div>
+  				<footer class="slds-modal__footer">
+  					<button class="slds-button slds-button_outline-brand" onclick="exitButton()">Выйти</button>
+  				</footer>
+			</div>
+		</div>
+		
+	</div>
+
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript">
+
+		let clientLoginLabel = document.getElementById('client-login');
+		let clientFirstNameLabel = document.getElementById('client-firstname');
+		let clientLastNameLabel = document.getElementById('client-lastname');
+		let clientRoleLabel = document.getElementById('client-role');
+		let clientEmailLabel = document.getElementById('client-email');
+
+		let clientLogin = '{!clientLogin}';
+		let client = '{!client}';
+        console.log("Login: " + clientLogin);
+        console.log("Client: " + client);
+
+        if (client == '') {
+        	exitToLoginPage();
+        }
+
+        client = JSON.parse(client);
+
+        clientLoginLabel.innerHTML = client.Login;
+        clientFirstNameLabel.innerHTML = client.FirstName;
+        clientLastNameLabel.innerHTML = client.LastName;
+        clientRoleLabel.innerHTML = client.Role;
+        clientEmailLabel.innerHTML = client.Email;
+
+		let userProfile = document.getElementById('userProfile');
+		function clientProfileShow() {
+			if (userProfile.getAttribute('hidden')) {
+				userProfile.removeAttribute('hidden');
+			} else {
+				userProfile.setAttribute('hidden', 'true');
+			}
+			
+		};
+
+		function exitButton() {
+			exitToLoginPage();
+		};
+
+		function candidatesShowJS() {
+			candidatesShow();
+		};
+
+		function clientsShowJS() {
+			clientsShow();
+		};
+
+		function employeesShowJS() {
+			employeesShow();
+		};
+		
+		function submitCommentJS() {
+			submitComment();
+		};
+
+		let candidateFirstName = document.getElementById('input-firstname');
+		let candidateLastName = document.getElementById('input-lastname');
+		let candidatePhone = document.getElementById('input-phone');
+		let candidateEmail = document.getElementById('input-email');
+		let candidateSkype = document.getElementById('input-skype');
+		let candidateStatusSelect = document.getElementById('candidateStatusSelect');
+		let candidateSourceCandidateSelect = document.getElementById('candidateSourceCandidateSelect');
+		let candidateSourceCommunicationSelect = document.getElementById('candidateSourceCommunicationSelect');
+		let candidateQuestionnaireTextarea = document.getElementById('textareaQuestionnaireId');
+		let candidateInterviewDateTimeInput = document.getElementById('candidateInterviewDateTimeInputId');
+		let candidateAnswerPeriodStrInput = document.getElementById('candidateAnswerPeriodStrInputId');
+		let candidateAnswerSelect = document.getElementById('candidateAnswerSelectId');
+		let candidatePositionInput = document.getElementById('input-position');
+		let candidateSalaryInput = document.getElementById('input-salary');
+		let candidateExperienceInput = document.getElementById('input-experience');
+		let candidateHRInput = document.getElementById('input-hr');
+		let candidateDescriptionTextarea = document.getElementById('textareaDescriptionId');
+
+		candidateFirstName.value='{!candidateFirstName}';
+		candidateLastName.value='{!candidateLastName}';
+		candidatePhone.value='{!candidatePhone}';
+		candidateEmail.value='{!candidateEmail}';
+		candidateSkype.value='{!candidateSkype}';
+		candidateStatusSelect.value = '{!candidateStatus}';
+		candidateSourceCandidateSelect.value = '{!candidateSourceCandidate}';
+		candidateSourceCommunicationSelect.value = '{!candidateSourceCommunication}';
+		candidateQuestionnaireTextarea.innerHTML = '{!candidateQuestionnaire}';
+		candidateInterviewDateTimeInput.value = '{!candidateInterviewDateTimeStr}';
+		candidateAnswerPeriodStrInput.value = '{!candidateAnswerPeriodStr}';
+		candidateAnswerSelect.value = '{!candidateAnswer}';
+		candidatePositionInput.value = '{!candidatePosition}';
+		candidateSalaryInput.value = '{!candidateSalary}';
+		candidateExperienceInput.value = '{!candidateExperience}';
+		candidateHRInput.value = '{!candidateHR}';
+		candidateDescriptionTextarea.value = '{!candidateDescription}';
+		
+	</script>
+
+</body>
+
+</html>
+	
+</apex:page>
