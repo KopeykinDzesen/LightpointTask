@@ -51,6 +51,10 @@ public class ClientsPageController {
 		this.clientRole = emple.Role__c;
 		this.clientEmail = emple.Email__c;
 
+		if (clientRole != 'Manager') {
+			return;
+		}
+
 		Map<String, String> clientMap = new Map<String, String>();
 		clientMap.put('FirstName', clientFirstName);
 		clientMap.put('LastName', clientLastName);

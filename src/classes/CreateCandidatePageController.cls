@@ -194,7 +194,8 @@ public class CreateCandidatePageController {
 													 Phone__c = candidatePhone, 
 													 SourceCandidate__c = candidateSourceCandidate, 
 													 SourceCommunication__c = candidateSourceCommunication,
-													 Status__c = 'Start');
+													 Status__c = 'Start',
+													 DatesOfCommunication__c = Datetime.now().format('dd-MM-yyyy HH:mm a'));
 		if (candidateEmail != '') {
 			newCandidate.Email__c = candidateEmail;
 		}
@@ -205,6 +206,7 @@ public class CreateCandidatePageController {
 		insert newCandidate;
 
 		Cache.Session.put('local.X1234567890.client', clientLogin);
+		Cache.Session.put('local.X1234567890.idEditCandidate', (String)newCandidate.Id);
 
 		PageReference candidateViewPage = Page.CandidateViewPageForManager;
       	candidateViewPage.setRedirect(true);

@@ -105,6 +105,7 @@ public class CandidatesPageController {
 	public PageReference editCandidate() {
 		test = idEditCandidate;
 		Cache.Session.put('local.X1234567890.idEditCandidate', idEditCandidate);
+		Cache.Session.put('local.X1234567890.timeEditCandidate', '');
 		PageReference candidateViewPage = Page.CandidateViewPageForManager;
       	candidateViewPage.setRedirect(true);
 		return candidateViewPage;

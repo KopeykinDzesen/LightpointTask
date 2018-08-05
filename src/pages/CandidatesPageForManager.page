@@ -23,12 +23,11 @@
 
 	<div class="slds-scope">
 
-		<div id="menu-form">			
+		<div id="menu-form" style="margin-bottom: 20px">			
 			<div class="slds-form slds-form_stacked">
 		  		<div class="slds-form-element" style="margin: 10px 0 0 10px">
-		    		<button class="slds-button slds-button_brand" onclick="clientsShowJS()">Пользователи</button>
-		    		<button class="slds-button slds-button_brand" onclick="employeesShowJS()">Сотрудники</button>
-		    		<!-- <button class="slds-button slds-button_brand" onclick="clientsShowJS()">Пользователи</button> -->
+		    		<button class="slds-button slds-button_brand" id="clientsShowButtonId" onclick="clientsShowJS()">Пользователи</button>
+		    		<button class="slds-button slds-button_brand" id="employeesShowButtonId" onclick="employeesShowJS()">Сотрудники</button>
 		    		<button class="slds-button slds-float_right" onclick="clientProfileShow()" style="position:absolute;top:-20px;right:10px;">
 						<apex:image value="{!$Resource.imgUser}" width="60px" height="60px" />
     				</button>
@@ -36,13 +35,13 @@
 			</div>
 		</div>
 
-		<button class="slds-button slds-button_success" style="margin: 20px" onclick="createCandidateJS()">Добавить кандидата</button>
+		<button class="slds-button slds-button_success" style="margin-bottom: 20px" id="addCandidateButtonId" onclick="createCandidateJS()">Добавить кандидата</button>
 
-		<apex:form id="main-block">
+		<apex:form>
 
 			<!-- <apex:outputText value="{!test}" /> -->
 
-			<apex:pageBlock title="Кандидаты" id="main-block">
+			<apex:pageBlock id="main-block" title="Кандидаты">
 					<apex:pageBlockTable value="{!allCandidates}" var="cnd">
 						<apex:column headerValue="">
 							<button type="button" class="slds-button" id="{!cnd.Id}" onclick="editCandidateJS(this.id)" style="margin-left: 5px;">
@@ -118,6 +117,15 @@
         clientLastNameLabel.innerHTML = client.LastName;
         clientRoleLabel.innerHTML = client.Role;
         clientEmailLabel.innerHTML = client.Email;
+
+        let addCandidateButton = document.getElementById('addCandidateButtonId'); 
+        let clientsShowButton = document.getElementById('clientsShowButtonId');
+        let employeesShowButton = document.getElementById('employeesShowButtonId');
+        if (client.Role != 'Manager') {
+        	 addCandidateButton.style.display = 'none';
+        	 clientsShowButton.style.display = 'none';
+        	 employeesShowButton.style.display = 'none';
+        }
 
 		let userProfile = document.getElementById('userProfile');
 

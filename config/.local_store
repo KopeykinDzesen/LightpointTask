@@ -64,7 +64,7 @@
         "id": "0666F0000081zOzQAI",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-04T12:46:38.000Z",
+        "lastModifiedDate": "2018-08-05T15:30:40.000Z",
         "manageableState": "unmanaged",
         "type": "ApexPage",
         "mmState": "clean"
@@ -92,7 +92,7 @@
         "id": "0666F0000081zTMQAY",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-04T18:53:55.000Z",
+        "lastModifiedDate": "2018-08-05T16:12:06.000Z",
         "manageableState": "unmanaged",
         "type": "ApexPage",
         "mmState": "clean"
@@ -120,7 +120,7 @@
         "id": "01p6F00000DJvmXQAT",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-02T17:17:41.000Z",
+        "lastModifiedDate": "2018-08-05T15:36:29.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"
@@ -134,7 +134,7 @@
         "id": "01p6F00000DJvqkQAD",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-04T18:53:11.000Z",
+        "lastModifiedDate": "2018-08-05T15:35:20.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"
@@ -148,7 +148,7 @@
         "id": "01p6F00000DJvhRQAT",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-04T12:53:52.000Z",
+        "lastModifiedDate": "2018-08-05T13:56:09.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"
@@ -162,7 +162,7 @@
         "id": "01p6F00000DJvleQAD",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-02T17:17:16.000Z",
+        "lastModifiedDate": "2018-08-05T15:36:06.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"
@@ -218,9 +218,23 @@
         "id": "01p6F00000FEwOMQA1",
         "lastModifiedById": "0056F000008YoL1QAK",
         "lastModifiedByName": "Денис Копейкин",
-        "lastModifiedDate": "2018-08-04T11:31:59.000Z",
+        "lastModifiedDate": "2018-08-05T12:39:37.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
+        "mmState": "clean"
+    },
+    "InsertUpdateCandidateTrigger.trigger": {
+        "createdById": "0056F000008YoL1QAK",
+        "createdByName": "Денис Копейкин",
+        "createdDate": "2018-08-05T06:40:05.000Z",
+        "fileName": "unpackaged/triggers/InsertUpdateCandidateTrigger.trigger",
+        "fullName": "InsertUpdateCandidateTrigger",
+        "id": "01q6F000000GlEQQA0",
+        "lastModifiedById": "0056F000008YoL1QAK",
+        "lastModifiedByName": "Денис Копейкин",
+        "lastModifiedDate": "2018-08-05T09:46:03.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexTrigger",
         "mmState": "clean"
     }
 }
