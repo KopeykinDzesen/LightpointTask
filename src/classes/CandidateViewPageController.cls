@@ -171,7 +171,7 @@ public class CandidateViewPageController {
 			List<Candidate__History> questionnaireHistory = [SELECT ParentId, OldValue, NewValue, Field, 
 										CreatedById, CreatedDate FROM Candidate__History 
 										WHERE ParentId = :idEditCandidate AND Field = 'Questionnaire__c'
-										];
+										AND CreatedDate = :mydatetime];
 			test = JSON.serialize(questionnaireHistory);
 			if (questionnaireHistory.size() != 0) {
 				this.candidateQuestionnaire = (String)questionnaireHistory[0].OldValue;
@@ -179,28 +179,28 @@ public class CandidateViewPageController {
 			List<Candidate__History> experienceHistory = [SELECT ParentId, OldValue, NewValue, Field, 
 										CreatedById, CreatedDate FROM Candidate__History 
 										WHERE ParentId = :idEditCandidate AND Field = 'Experience__c'
-										];
+										AND CreatedDate = :mydatetime];
 			if (experienceHistory.size() != 0) {
 				this.candidateExperience = Decimal.valueOf((String)experienceHistory[0].OldValue);
 			}										
 			List<Candidate__History> positionHistory = [SELECT ParentId, OldValue, NewValue, Field, 
 										CreatedById, CreatedDate FROM Candidate__History 
 										WHERE ParentId = :idEditCandidate AND Field = 'Position__c'
-										];
+										AND CreatedDate = :mydatetime];
 			if (positionHistory.size() != 0) {
 				this.candidatePosition = (String)positionHistory[0].OldValue;
 			}											
 			List<Candidate__History> salaryHistory = [SELECT ParentId, OldValue, NewValue, Field, 
 										CreatedById, CreatedDate FROM Candidate__History 
 										WHERE ParentId = :idEditCandidate AND Field = 'Salary__c'
-										];
+										AND CreatedDate = :mydatetime];
 			if (salaryHistory.size() != 0) {
 				this.candidateSalary = Decimal.valueOf((String)salaryHistory[0].OldValue);
 			}
 			List<Candidate__History> statusHistory = [SELECT ParentId, OldValue, NewValue, Field, 
 										CreatedById, CreatedDate FROM Candidate__History 
 										WHERE ParentId = :idEditCandidate AND Field = 'Status__c'
-										];
+										AND CreatedDate = :mydatetime];
 			if (statusHistory.size() != 0) {
 				this.candidateStatus = (String)statusHistory[0].OldValue;
 			}	
