@@ -459,6 +459,12 @@
 
 		};
 
+		let textareaComent = document.getElementById('textareaComentId');
+		function submitCommentJS() {
+			commentContent = textareaComent.value;
+			submitComment(commentContent);
+		};
+
 		function deleteCommentJS(number) {
 			deleteComment(number);
 		};
