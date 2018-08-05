@@ -1,0 +1,182 @@
+<apex:page showHeader="true" sidebar="false" controller="LoginPageController">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+<head>
+	
+</head>
+
+<body>
+	
+	<apex:slds />
+
+	<apex:form >
+		<apex:actionFunction name="registration" action="{!registration}" oncomplete="showMessageError({!MessageError})" reRender="main-block">
+			<apex:param name="FirstName" assignTo="{!FirstName}" value="" />
+			<apex:param name="LastName" assignTo="{!LastName}" value="" />
+			<apex:param name="Login" assignTo="{!Login}" value="" />
+			<apex:param name="Password" assignTo="{!Password}" value="" />
+			<apex:param name="ConfirmPassword" assignTo="{!ConfirmPassword}" value="" />
+		</apex:actionFunction>
+		<apex:actionFunction name="login" action="{!login}" oncomplete="showMessageError({!MessageError})" reRender="main-block">
+			<apex:param name="Login" assignTo="{!Login}" value="" />
+			<apex:param name="Password" assignTo="{!Password}" value="" />
+		</apex:actionFunction>
+	</apex:form>
+
+	<div class="slds-scope" id="main-block">
+
+		<div id="messageError" hidden="true">
+  			<div class="slds-notify_container slds-is-relative">
+    			<div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+      				<span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top">
+        				<svg class="slds-icon slds-icon_small" aria-hidden="true">
+          					<use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#error')}" />
+        				</svg>
+      				</span>
+      				<div class="slds-notify__content">
+        				<h2 class="slds-text-heading_small" id="text-messageError"></h2>
+      				</div>
+      				<button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" onclick="closeMessageError()">
+        				<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+          					<use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+        				</svg>
+      				</button>
+    			</div>
+  			</div>
+		</div>
+
+		<div id="authorization-form" style="margin: 5% 35% 5% 25%">			
+			<div class="slds-form slds-form_horizontal">
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" for="input-login-l">Логин</label>
+					<div class="slds-form-element__control">
+		  				<input type="text" id="input-login-l" class="slds-input" placeholder="Your Login" value="dzesen" />
+					</div>
+				</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-password-l">Пароль</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="password" id="input-password-l" class="slds-input" placeholder="Your Password" value="123" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<div class="slds-form-element__control">
+		      			<a href="javascript:registrationShow()">Зарегистрироваться</a>
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<button class="slds-button slds-button_outline-brand" onclick="loginButton()">Войти</button>
+		  		</div>
+			</div>
+		</div>
+
+		<div id="registration-form" style="margin: 5% 35% 5% 25%" hidden="true">			
+			<div class="slds-form slds-form_horizontal">
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" for="input-firstname-r">Имя</label>
+					<div class="slds-form-element__control">
+		  				<input type="text" id="input-firstname-r" class="slds-input" placeholder="Your First Name" value="Денис" />
+					</div>
+				</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-lastname-r">Фамилия</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="text" id="input-lastname-r" class="slds-input" placeholder="Your Last Name" value="Копейкин" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-login-r">Логин</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="text" id="input-login-r" class="slds-input" placeholder="Your Login" value="dzesen" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-password-r">Пароль</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="password" id="input-password-r" class="slds-input" placeholder="Your Password" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<label class="slds-form-element__label" for="input-confirmpassword-r">Подтвердите пароль</label>
+		    		<div class="slds-form-element__control">
+		      			<input type="password" id="input-confirmpassword-r" class="slds-input" placeholder="Your Password" />
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<div class="slds-form-element__control">
+		      			<a href="javascript:authorizationShow()">Авторизоваться</a>
+		    		</div>
+		  		</div>
+		  		<div class="slds-form-element">
+		    		<button class="slds-button slds-button_outline-brand" onclick="registrationButton()">Зарегистрироваться</button>
+		  		</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript">
+
+		let messageError = document.getElementById('messageError');
+		let messageSuccess = document.getElementById('messageSuccess');
+		let authorizationForm = document.getElementById('authorization-form');
+		let registrationForm = document.getElementById('registration-form');
+		
+		function registrationShow() {
+			authorizationForm.setAttribute('hidden', 'true');
+			registrationForm.removeAttribute('hidden');
+			closeMessageError();
+		};
+
+		function authorizationShow() {
+			registrationForm.setAttribute('hidden', 'true');
+			authorizationForm.removeAttribute('hidden');
+			closeMessageError();
+		};
+
+		function closeMessageError() {
+			messageError.setAttribute('hidden', 'true');
+		};
+
+		function showMessageError(MessageError) {
+			console.log(MessageError);
+			if (MessageError) {
+				document.getElementById('text-messageError').innerHTML = MessageError;
+				messageError.removeAttribute('hidden');
+			}
+		};
+
+		function registrationButton() {
+			messageError.setAttribute('hidden', 'true');
+
+			let FirstName = document.getElementById('input-firstname-r').value;
+			let LastName = document.getElementById('input-lastname-r').value;
+			let Login = document.getElementById('input-login-r').value;
+			let Password = document.getElementById('input-password-r').value;
+			let ConfirmPassword = document.getElementById('input-confirmpassword-r').value;
+
+			console.log(FirstName + '___' + LastName + '___' + Login + '___' + Password + '___' + ConfirmPassword);
+
+			registration(FirstName, LastName, Login, Password, ConfirmPassword);
+		};
+
+		function loginButton() {
+			messageError.setAttribute('hidden', 'true');
+
+			let Login = document.getElementById('input-login-l').value;
+			let Password = document.getElementById('input-password-l').value;
+
+			console.log(Login + '___' + Password);
+
+			login(Login, Password);
+		};
+
+	</script>
+
+</body>
+
+</html>
+	
+</apex:page>

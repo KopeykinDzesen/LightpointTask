@@ -1,0 +1,205 @@
+<apex:page showHeader="true" sidebar="false" controller="EmployeesPageController">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+
+<head>
+	
+</head>
+
+<body>
+	
+	<apex:slds />
+
+	<apex:form >
+		<!-- <apex:actionFunction name="clientsShow" action="{!clientsShow}" oncomplete="" reRender="main-block">
+			<apex:param name="arrayCheckBoxRole" assignTo="{!arrayCheckBoxRole}" value="" />
+		</apex:actionFunction> -->
+		<apex:actionFunction name="candidatesShow" action="{!candidatesShow}" oncomplete="" reRender="main-block">
+		</apex:actionFunction>
+		<apex:actionFunction name="employeesShow" action="{!employeesShow}" oncomplete="" reRender="main-block">
+			<apex:param name="arrayCheckBoxRole" assignTo="{!arrayCheckBoxRole}" value="" />
+		</apex:actionFunction>
+		<apex:actionFunction name="clientsShow" action="{!clientsShow}" oncomplete="" reRender="main-block">
+		</apex:actionFunction>
+		<apex:actionFunction name="exitToLoginPage" action="{!exitToLoginPage}" oncomplete="" reRender="" />
+	</apex:form>
+
+	<div class="slds-scope">
+
+		<div id="menu-form">			
+			<div class="slds-form slds-form_stacked">
+		  		<div class="slds-form-element" style="margin: 10px 0 0 10px">
+		    		<button class="slds-button slds-button_brand" onclick="candidatesShowJS()">Кандидаты</button>
+		    		<!-- <button class="slds-button slds-button_brand" onclick="employeesShowJS()">Сотрудники</button> -->
+		    		<button class="slds-button slds-button_brand" onclick="clientsShowJS()">Пользователи</button>
+		    		<button class="slds-button slds-float_right" onclick="clientProfileShow()" style="position:absolute;top:-20px;right:10px;">
+						<apex:image value="{!$Resource.imgUser}" width="60px" height="60px" />
+    				</button>
+		  		</div>
+			</div>
+		</div>
+
+		<fieldset class="slds-form-element" style="margin: 20px">
+			<legend class="slds-form-element__legend slds-form-element__label">Роли</legend>
+			<div class="slds-form-element__control">
+				<div class="slds-checkbox_button-group">
+					<span class="slds-button slds-checkbox_button">
+						<input type="checkbox" id="manager" value="manager" name="checkbox" checked="true" onclick="showEmployeesByRole()" />
+						<label class="slds-checkbox_button__label" for="manager">
+							<span class="slds-checkbox_faux">Manager</span>
+						</label>
+					</span>
+					<span class="slds-button slds-checkbox_button">
+						<input type="checkbox" id="hr" value="hr" name="checkbox" checked="true" onclick="showEmployeesByRole()" />
+						<label class="slds-checkbox_button__label" for="hr">
+							<span class="slds-checkbox_faux">HR</span>
+						</label>
+					</span>
+					<span class="slds-button slds-checkbox_button">
+						<input type="checkbox" id="interviewer" value="interviewer" name="checkbox" checked="true" onclick="showEmployeesByRole()" />
+						<label class="slds-checkbox_button__label" for="interviewer">
+							<span class="slds-checkbox_faux">Interviewer</span>
+						</label>
+					</span>
+				</div>
+			</div>
+		</fieldset>
+
+		<apex:form id="main-block">
+
+			<!-- <apex:outputText value="{!test}" /> -->
+
+			<apex:pageBlock title="Сотрудники" id="main-block">
+					<apex:pageBlockTable value="{!employeesWithFilter}" var="emps">
+						<apex:repeat value="{!employeesFieldsName}" var="fld">
+							<apex:column headerValue="{!fld.Label}">
+								<apex:outputField value="{!emps[fld]}" />
+							</apex:column>
+						</apex:repeat>
+					</apex:pageBlockTable>
+			</apex:pageBlock>
+
+		</apex:form>
+
+		<div id="userProfile" hidden="true">
+			<div class="slds-modal__container" style="height: 450px;width:150px;position:absolute;top:50px;right: 10px;">
+  				<header class="slds-modal__header" style="height:70px">
+    				<h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Your profile</h2>
+  				</header>
+  				<div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+  					<div class="slds-grid slds-gutters">
+						<div class="slds-col">
+							<label class="slds-float_right">Логин:</label><br />
+							<label class="slds-float_right">Имя:</label><br />
+							<label class="slds-float_right">Фамилия:</label><br />
+							<label class="slds-float_right">Роль:</label><br />
+							<label class="slds-float_right">Email:</label><br />
+						</div>
+						<div class="slds-col">
+							<label class="slds-float_left" id="client-login"></label><br />
+							<label class="slds-float_left" id="client-firstname"></label><br />
+							<label class="slds-float_left" id="client-lastname"></label><br />
+							<label class="slds-float_left" id="client-role"></label><br />
+							<label class="slds-float_left" id="client-email"></label><br />
+						</div>
+  					</div>
+  				</div>
+  				<footer class="slds-modal__footer">
+  					<button class="slds-button slds-button_outline-brand" onclick="exitButton()">Выйти</button>
+  				</footer>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript">
+
+		let clientLoginLabel = document.getElementById('client-login');
+		let clientFirstNameLabel = document.getElementById('client-firstname');
+		let clientLastNameLabel = document.getElementById('client-lastname');
+		let clientRoleLabel = document.getElementById('client-role');
+		let clientEmailLabel = document.getElementById('client-email');
+
+		let clientLogin = '{!clientLogin}';
+		let client = '{!client}';
+        console.log("Login: " + clientLogin);
+        console.log("Client: " + client);
+
+        if (client == '') {
+        	exitToLoginPage();
+        }
+
+        client = JSON.parse(client);
+
+        clientLoginLabel.innerHTML = client.Login;
+        clientFirstNameLabel.innerHTML = client.FirstName;
+        clientLastNameLabel.innerHTML = client.LastName;
+        clientRoleLabel.innerHTML = client.Role;
+        clientEmailLabel.innerHTML = client.Email;
+
+		let userProfile = document.getElementById('userProfile');
+
+		function clientProfileShow() {
+			if (userProfile.getAttribute('hidden')) {
+				userProfile.removeAttribute('hidden');
+			} else {
+				userProfile.setAttribute('hidden', 'true');
+			}
+			
+		};
+
+		function exitButton() {
+			exitToLoginPage();
+		};
+
+		let managerCheckBox = document.getElementById('manager');
+		let hrCheckBox = document.getElementById('hr');
+		let interviewerCheckBox = document.getElementById('interviewer');
+
+		// manager == 1
+		// hr == 2
+		// interviewer == 3
+
+		function showEmployeesByRole() {
+			let arrayCheckBoxRole = [1, 2, 3];
+
+			if (managerCheckBox.checked) {
+				arrayCheckBoxRole[0] = 1;
+			} else {
+				arrayCheckBoxRole[0] = 0;
+			}
+			if (hrCheckBox.checked) {
+				arrayCheckBoxRole[1] = 2;
+			} else {
+				arrayCheckBoxRole[1] = 0;
+			}
+			if (interviewerCheckBox.checked) {
+				arrayCheckBoxRole[2] = 3;
+			} else {
+				arrayCheckBoxRole[2] = 0;
+			}
+
+			arrayCheckBoxRole = JSON.stringify(arrayCheckBoxRole);
+			employeesShow(arrayCheckBoxRole);
+			console.log(arrayCheckBoxRole);
+		};
+
+		employeesShow();
+
+		function candidatesShowJS() {
+			candidatesShow();
+		};
+
+		function clientsShowJS() {
+			clientsShow();
+		};
+
+	</script>
+
+</body>
+
+</html>
+	
+</apex:page>
